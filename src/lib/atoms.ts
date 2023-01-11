@@ -1,10 +1,4 @@
 import { atom } from "jotai";
-
-type Stuff = {
-  id: number;
-  description: string;
-};
-
-type Stuffs = Stuff[];
+import { Stuffs } from '../types/types';
 
 export const stuffsAtom = atom<Stuffs>([]);

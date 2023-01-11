@@ -7,7 +7,7 @@ export default function ListPart() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold underline">List</h1>
+        <h1 className="text-3xl font-bold">Inbox</h1>
         <div className="flex flex-col justify-center items-center">
           <ul className="list-none list-inside">
             {stuff.map(item => (
