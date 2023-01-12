@@ -1,4 +1,4 @@
 import { atom } from "jotai";
-import { Stuffs } from '../types/types';
+import { TStuffs } from './../types/types';
 
-export const stuffsAtom = atom<Stuffs>([]);
+export const stuffsAtom = atom<TStuffs>([]);

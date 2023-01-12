@@ -2,13 +2,13 @@ import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { useEffect } from 'react';
 import { stuffsAtom } from '../lib/atoms';
-import { Stuff, Stuffs } from '../types/types';
+import { TStuffs } from '../types/types';
 
-const stuffsLocalStorage = atomWithStorage<Stuffs>('stuffs', []);
+const stuffsLocalStorage = atomWithStorage<TStuffs>('stuffs', []);
 
 export default function InputPart() {
   const [stuff, setStuff] = useAtom(stuffsAtom);
-  const [stuffs, setStuffs] = useAtom(stuffsLocalStorage);
+  const [stuffsLs, setStuffsLs] = useAtom(stuffsLocalStorage);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,18 +21,18 @@ export default function InputPart() {
   };
 
   console.log(stuff.length);
-  console.log('localStorage', stuffs);
+  console.log('localStorage', stuffsLs);
 
   // salvar no localStorage quando o array mudar
   useEffect(() => {
-    setStuffs(stuff);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    setStuffsLs(stuff);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stuff]);
 
   // carregar do localStorage quando o componente for montado
   useEffect(() => {
-    setStuff(stuffs);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    setStuff(stuffsLs);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

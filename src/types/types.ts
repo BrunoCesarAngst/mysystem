@@ -1,6 +1,6 @@
-export type Stuff = {
+export type TStuff = {
   id: number;
   description: string;
 };
 
-export type Stuffs = Stuff[];
+export type TStuffs = TStuff[];
